@@ -3,7 +3,7 @@
 - Timer countdown display
 - Twitter notifications (complete)
 - Twitch Chat notification (complete)
--
+
 # Twitch Chat bot base
 - user defined commands (completed type defs timer/whisper/info/award)
 - in stream rewards (in progress)
