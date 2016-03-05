@@ -216,6 +216,36 @@ function getFollowers() {
 
 function getViewers() {
 
+//    var url = "https://api.twitch.tv/kraken/streams?channel=juirytrivia&callback=JSON_CALLBACK";
+//    $http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
+//    url: "https://api.twitch.tv/kraken/streams?channel=" + user.username
+//var username = 'juirytrivia';
+
+
+ //   {"streams":[],"_total":0,"_links":{"self":"https://api.twitch.tv/kraken/streams?channel=juirytrivia\u0026limit=25\u0026offset=0",
+ //       "next":"https://api.twitch.tv/kraken/streams?channel=juirytrivia\u0026limit=25\u0026offset=25","featured":"https://api.twitch.tv/kraken/streams/featured",
+ // "summary":"https://api.twitch.tv/kraken/streams/summary","followed":"https://api.twitch.tv/kraken/streams/followed"}}
+//https://tmi.twitch.tv/group/user/juirytrivia/chatters
+//        url: "https://api.twitch.tv/kraken/streams?channel=juirytrivia"
+
+    /*
+     {
+     "_links": {},
+     "chatter_count": 3,
+     "chatters": {
+     "moderators": [
+     "creditkeeper",
+     "juirytrivia"
+     ],
+     "staff": [],
+     "admins": [],
+     "global_mods": [],
+     "viewers": [
+     "babyzdati"
+     ]
+     }
+     }
+     */
 
 
     client.api({
@@ -368,6 +398,12 @@ function StartStream() {
                     break;
                 case 'info':
                     sendChat(channelName,commands.main.command[commandList.indexOf(fields[0])].value);
+                    break;
+                case 'display':
+                    redisclient.get(user.username + "_credit", function (err, reply) {
+                        sendChat(channelName,"balance is: " + reply.toString());
+                        //    console.log(reply.toString()); // Will print `OK`
+                    });
                     break;
                 case 'timer':
                     sendChat(channelName, 'not implemented');

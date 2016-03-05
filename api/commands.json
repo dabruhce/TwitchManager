@@ -16,6 +16,13 @@
         "value": "This reply is info"
       },
       {
+        "name": "!balance",
+        "description": "format: !balance",
+        "restrict": "none",
+        "type": "display",
+        "value": "This reply is info"
+      },
+      {
         "name": "!tell",
         "description": "General command provides info based on command",
         "restrict": "none",
