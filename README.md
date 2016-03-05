@@ -67,6 +67,8 @@ appServices.factory('socket', function ($rootScope) {
 - Twitch Chat notification (complete)
 - Added linked Redis for follower check/notifier (complete)
 - Redis for credit tracking, saves to filesystem for persistence (complete)
+- Need anti spam for commands, maybe use expiring keys, to avoid api block
+- levels for display of user points in chat
 
 # Twitch Chat bot base
 - user defined commands (complete)
