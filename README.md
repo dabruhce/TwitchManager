@@ -5,8 +5,9 @@
 - Twitch Chat notification (complete)
 
 # Twitch Chat bot base
-- user defined commands (completed type defs timer/whisper/info/award)
-- in stream rewards (in progress)
+- user defined commands (complete)
+- in stream rewards (complete)
+- follow notification (complete)
 
 # Twitch chat bot V2
 - giveaways
@@ -14,8 +15,9 @@
 
 # Cleanup
 - clean code of api keys before upload
-- create tutorial for api keys
-
+- create tutorial for api keys (calendar, twitter, twitch)
+- create tutorial for misc setup
+- 
 # Twitter enhancements
 - wire up the tweet command
 - check webrtc to twitter?
@@ -26,4 +28,3 @@
 - Android/Iphone/Web video uploader - port from http://trivia.juiry.com/ & standalone app - requires rework
 - Xsplit Runner - port from local src requires rework
 - rtmp stream user videos from S3 - port from local src requires rework
-
