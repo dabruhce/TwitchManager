@@ -78,10 +78,10 @@ appServices.factory('socket', function ($rootScope) {
 - redis interface for accounts
 
 # Cleanup
-- clean code of api keys before upload
+- clean code of api keys before upload (complete)
 - create tutorial for api keys (calendar, twitter, twitch)
-- create tutorial for misc setup
-- 
+- create video tutorial for misc setup
+
 # Twitter enhancements
 - wire up the tweet command
 - check webrtc to twitter?
