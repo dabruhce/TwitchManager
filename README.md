@@ -20,6 +20,43 @@
 - update calendarCtrl in controllers.js with api tokens googleCalendarApiKey
 - get the share value of the calendar you'd like to share and add to controller on googleCalendarId
 
+# Configure IP - maybe
+- depending on how you setup Docker Toolbox change to /app/services/services.js may be needed
+- In docker toolbox execute docker-machine ip default
+- this IP must match /app/service/services.js
+```javascript
+appServices.factory('socket', function ($rootScope) {
+    var socket = io.connect('http://192.168.99.100:8000');
+    console.log('connected to socket');
+```
+
+# Configure commands.json
+- Users can add commands as necessary, !debit & !credit should remain static
+- This is generally a work in progress but basic commands should work fine if added with restict: none, value: whatever needs to be said, and name: !mycommand or !whatevercommand
+```json    
+	{
+        "name": "!mycommand",
+        "description": "This is my command",
+        "restrict": "none",
+        "type": "info",
+        "value": "This will be chatted!!"
+    },
+```
+
+# Run the bot
+- cd TwitchManager
+- docker rm -f $(docker ps -a -q)
+- docker rmi $(docker images -q)
+- docker-compose up -d
+
+# Use bot notifications
+- point clr or streaming browser items at http://192.168.99.100:8000/index.html
+- Note if you have a different docker ip the ip above should be changed to that value
+
+# Use bot calendar
+- point clr or streaming browser items at http://192.168.99.100:8000/calendar.html
+- work inprogress
+
 # TwitchManager
 - Google Calendar for Stream schedule (complete)
 - Timer countdown display
@@ -36,6 +73,9 @@
 # Twitch chat bot V2
 - giveaways
 - polls - port from vote code
+- gui interface to setup commands
+- implement timers
+- redis interface for accounts
 
 # Cleanup
 - clean code of api keys before upload

@@ -1,0 +1,20 @@
+{
+  "name": "Twitch Manager",
+  "description": "Dockerized Twitch Manager",
+  "homepage": "https://github.com/tkntobfrk/TwitchManager",
+  "version": "0.0.3",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "request": "",
+    "socket.io": "1.4.5",
+    "tmi.js": "0.0.23",
+    "mongodb": "2.1.6",
+    "twit": "2.1.0",
+    "underscore": "*",
+    "redis": "*"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}

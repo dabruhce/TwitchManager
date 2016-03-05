@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ionic/1.2.4/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="/bower_components/animate.css/animate.css" rel="stylesheet">
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="css/ionic.app.css" rel="stylesheet">
+  -->
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script>
+
+  </script>
+  <!-- ionic/angularjs js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ionic/1.2.4/js/ionic.bundle.js"></script>
+
+  <!--script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+  <script-- src="bower_components/ngFx/dist/ngFx.js"></script-->
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+  <!-- Compiled and minified CSS -->
+
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+  <script src="js/controllers/controllers.js"></script>
+  <script src="js/services/service.js"></script>
+  <!--script src="js/directives/directive.js"></script>
+  <script src="js/filters/filter.js"></script-->
+
+  <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
+  <!-- jquery, moment, and angular have to get included before fullcalendar -->
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+  <link href="https://code.jquery.com/ui/1.10.4/themes/dark-hive/jquery-ui.css" rel="stylesheet">
+  <script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+  <script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+  <script type="text/javascript" src="bower_components/fullcalendar/dist/gcal.js"></script>
+
+</head>
+<body ng-app="app" >
+
+
+<ion-pane  class="my-menu">
+  <!--ion-header-bar class="bar-stable">
+    <h1 class="title">Ionic Blank Starter</h1>
+  </ion-header-bar-->
+  <ion-content>
+    <div  ng-controller="MainCtrl">
+
+      <div class="list card animated bounceInDown" ng-hide="hideAlert">
+    <!--div class="list card animated bounceInDown" ng-hide="hideAlert" ng-class="{'bounceInDown': bounceInDown, 'bounceOutDown': !bounceInDown} "-->
+
+        <div class="item item-avatar">
+          <img style="float: left" src={{logo}}>
+          <h2 style="float: center">{{user}}</h2>
+          <!--p>{{alertType}}</p-->
+          <!--img style="float: right" src="/img/twitch.png" height="42" width="42"-->
+          <img style="float: right" src="/img/twitter.png" height="40" width="40" ng-if="isTweet()">
+          <img style="float: right" src="/img/twitch.png" height="40" width="40" ng-if="isTwitchChat()">
+        </div>
+      <div class="item item-body">
+        <div class="animated bounceInLeft center">{{message}}</div>
+      </div>
+    </div>
+
+    </div>
+  </ion-content>
+</ion-pane>
+
+</body>
+</html>

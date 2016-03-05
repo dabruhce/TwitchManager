@@ -1,0 +1,9 @@
+{
+  "identity": {
+    "consumer_key": "CONSUMER_KEY_VALUE",
+    "consumer_secret": "CONSUMER_SECRET_VALUE",
+    "access_token": "ACCESS_TOKEN",
+    "access_token_secret": "ACCESS_TOKEN_SECRET"
+  },
+  "search" : "#destinythegame"
+}

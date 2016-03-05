@@ -1,0 +1,14 @@
+{
+  "options": {
+    "debug": true
+  },
+  "connection": {
+    "random": "chat",
+    "reconnect": true
+  },
+  "identity": {
+    "username": "USERNAME",
+    "password": "oauth:SOMEVALUE"
+  },
+  "channels": ["#USERNAME"]
+}

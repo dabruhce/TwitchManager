@@ -1,0 +1,16 @@
+web:
+  build: .
+  links:
+   - db:redis
+  ports:
+   - "8000:3000"
+   - "3000"
+  environment:
+   NODE_ENV: development
+db:
+  image: redis
+  command: redis-server --appendonly yes
+  ports:
+  - "6379:6379"
+  volumes:
+  - "/c/${HOMEPATH}/data/redis:/data"

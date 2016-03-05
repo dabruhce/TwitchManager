@@ -1,0 +1,23 @@
+{
+  "name": "Twitch Manager",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tkntobfrk/TwitchManager",
+  "authors": [
+    "bruce <tkntobfrk@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animate.css": "*",
+    "angular-ui-calendar": "~1.0.1"
+  }
+}

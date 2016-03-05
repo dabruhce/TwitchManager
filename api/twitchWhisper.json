@@ -1,0 +1,15 @@
+{
+  "options": {
+    "debug": true
+  },
+  "connection": {
+    "server": "group.tmi.twitch.tv",
+    "port": 80,
+    "reconnect": true
+  },
+  "identity": {
+    "username": "USERNAME",
+    "password": "oauth:SOMEVALUE"
+  },
+  "channels": ["#USERNAME"]
+}

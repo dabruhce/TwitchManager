@@ -1,0 +1,43 @@
+/* Empty. Add your own CSS if you like */
+.container {
+    text-align: center;
+
+}
+.my-menu {
+    background-color: rgba(0,0,0,0);
+    color: #FFFFFF;
+}
+input[type='checkbox'] {
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+    margin: 20px;
+}
+
+.box {
+    margin: 20px auto;
+    background: #5FCF80;
+    width: 40px;
+    height: 40px;
+}
+
+.circle {
+    -webkit-transform: rotate(360deg);
+    background: #9351A6;
+    border-radius: 50%;
+    margin: 20px auto;
+    width: 50px;
+    height: 50px;
+}
+
+.rotate {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+.chat-item {
+    -webkit-animation: fadeInLeft 1s;
+    animation: fadeInLeft 1s;
+}

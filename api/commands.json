@@ -1,0 +1,48 @@
+{
+  "main": {
+    "command": [
+      {
+        "name": "!credit",
+        "description": "multipart format: !credit $user $value",
+        "restrict": "mod",
+        "type": "award",
+        "value": "10"
+      },
+      {
+        "name": "!debit",
+        "description": "multipart format: !debit $user $value",
+        "restrict": "mod",
+        "type": "decrease",
+        "value": "This reply is info"
+      },
+      {
+        "name": "!tell",
+        "description": "General command provides info based on command",
+        "restrict": "none",
+        "type": "info",
+        "value": "This reply is info"
+      },
+      {
+        "name": "!tango",
+        "description": "timer meant to be placed into interval timer - usage tbd",
+        "restrict": "all",
+        "type": "timer",
+        "value": "placeholder"
+      },
+      {
+        "name": "!discord",
+        "description": "This command requires requesting user to have at least the value of restrict in order for the whisper to be sent to the user",
+        "restrict": 10000,
+        "type": "whisper",
+        "value": "server: myserver, password: mypassword"
+      },
+      {
+        "name": "!whisper",
+        "description": "Testing for whisper",
+        "restrict": "mod",
+        "type": "whisper",
+        "value": "This is whisper"
+      }
+    ]
+  }
+}
