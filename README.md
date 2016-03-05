@@ -1,8 +1,32 @@
+# Setup
+- Download [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+- Get twitch auth tokens [Twitch Apps](https://twitchapps.com/tmi/) - required
+- Get twitter auth tokens [Twitter Apps](https://apps.twitter.com/) - required
+- Get Google Api key [Google Developer console](https://console.developers.google.com/) - optional
+
+# Configure
+- Launch Docker Quickstart Terminal
+- git clone https://github.com/tkntobfrk/TwitchManager.git
+
+# Configure Twitch Chat
+- update twitch.json with twitch auth tokens
+- update twitchWhisper.json with twitch auth tokens
+
+# Configure Twitter search
+- update twitter.json with twitter auth tokens
+- update twitter.json with search term(s), can be comma seperated
+
+# Configure Google Calendar - optional
+- update calendarCtrl in controllers.js with api tokens googleCalendarApiKey
+- get the share value of the calendar you'd like to share and add to controller on googleCalendarId
+
 # TwitchManager
 - Google Calendar for Stream schedule (complete)
 - Timer countdown display
 - Twitter notifications (complete)
 - Twitch Chat notification (complete)
+- Added linked Redis for follower check/notifier (complete)
+- Redis for credit tracking, saves to filesystem for persistence (complete)
 
 # Twitch Chat bot base
 - user defined commands (complete)
