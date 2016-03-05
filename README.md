@@ -55,7 +55,10 @@ appServices.factory('socket', function ($rootScope) {
 
 # Use bot calendar
 - point clr or streaming browser items at http://192.168.99.100:8000/calendar.html
+- calendar can be shared amongst users stream teams can setup a shared schedule
 - work inprogress
+
+![alt text](https://cloud.githubusercontent.com/assets/4344301/13550807/76332fa8-e2eb-11e5-8135-33e55a481e9d.PNG)
 
 # TwitchManager
 - Google Calendar for Stream schedule (complete)
@@ -64,6 +67,8 @@ appServices.factory('socket', function ($rootScope) {
 - Twitch Chat notification (complete)
 - Added linked Redis for follower check/notifier (complete)
 - Redis for credit tracking, saves to filesystem for persistence (complete)
+- Need anti spam for commands, maybe use expiring keys, to avoid api block
+- levels for display of user points in chat
 
 # Twitch Chat bot base
 - user defined commands (complete)
@@ -76,12 +81,13 @@ appServices.factory('socket', function ($rootScope) {
 - gui interface to setup commands
 - implement timers
 - redis interface for accounts
+- scoreboard
 
 # Cleanup
-- clean code of api keys before upload
+- clean code of api keys before upload (complete)
 - create tutorial for api keys (calendar, twitter, twitch)
-- create tutorial for misc setup
-- 
+- create video tutorial for misc setup
+
 # Twitter enhancements
 - wire up the tweet command
 - check webrtc to twitter?

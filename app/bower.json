@@ -1,7 +1,6 @@
 {
-  "name": "Twitch Manager",
+  "name": "TwitchManager",
   "version": "0.0.1",
-  "homepage": "https://github.com/tkntobfrk/TwitchManager",
   "authors": [
     "bruce <tkntobfrk@gmail.com>"
   ],
