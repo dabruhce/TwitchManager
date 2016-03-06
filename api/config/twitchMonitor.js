@@ -2,12 +2,8 @@ var req = require('request');
 var fs = require('fs');
 var io = require('../app').io;
 var fs = require('fs');
-
-
 var redis = require('redis');
-//var redisclient = redis.createClient(); //creates a new client
 var redisclient = redis.createClient(process.env.REDIS_PORT_6379_TCP_PORT, process.env.REDIS_PORT_6379_TCP_ADDR);
-
 
 redisclient.on('connect', function() {
     console.log('connected');
@@ -109,8 +105,6 @@ io.sockets.on('connection', function(socket) {
     socket.on(SOCKETIO_START_EVENT, function(data) {
         handleClient(data, socket);
     });
-
-
 });
 
 StartStream();
@@ -144,7 +138,6 @@ function twitchNotify(message) {
     jsonobj.user = info[0];
     jsonobj.type = info[2];
     jsonobj.message = "woot";
-
 
     client.api({
         url: "https://api.twitch.tv/kraken/users/" + info[0]
@@ -193,76 +186,37 @@ function getFollowers() {
     }, function(err, res, body) {
 
         if(res.statusCode == 200) {
-            console.log(JSON.stringify(body));
+         //   console.log(JSON.stringify(body));
             var jsonObj = JSON.parse(body);
 
             for (var i = 0; i < jsonObj.follows.length; i++) {
-                console.log(jsonObj.follows[i].user.name);
-                console.log(jsonObj.follows[i]);
+           //     console.log(jsonObj.follows[i].user.name);
+           //     console.log(jsonObj.follows[i]);
                 var currentUser = jsonObj.follows[i].user.name;
 
                 checkFollowers(currentUser);
-
             }
 
             //todo pagination
-            console.log(jsonObj._links.next);
+           // console.log(jsonObj._links.next);
         }
     });
-
-
 }
 
 
 function getViewers() {
 
-//    var url = "https://api.twitch.tv/kraken/streams?channel=juirytrivia&callback=JSON_CALLBACK";
-//    $http.defaults.headers.common["X-Custom-Header"] = "Angular.js";
-//    url: "https://api.twitch.tv/kraken/streams?channel=" + user.username
-//var username = 'juirytrivia';
-
-
- //   {"streams":[],"_total":0,"_links":{"self":"https://api.twitch.tv/kraken/streams?channel=juirytrivia\u0026limit=25\u0026offset=0",
- //       "next":"https://api.twitch.tv/kraken/streams?channel=juirytrivia\u0026limit=25\u0026offset=25","featured":"https://api.twitch.tv/kraken/streams/featured",
- // "summary":"https://api.twitch.tv/kraken/streams/summary","followed":"https://api.twitch.tv/kraken/streams/followed"}}
-//https://tmi.twitch.tv/group/user/juirytrivia/chatters
-//        url: "https://api.twitch.tv/kraken/streams?channel=juirytrivia"
-
-    /*
-     {
-     "_links": {},
-     "chatter_count": 3,
-     "chatters": {
-     "moderators": [
-     "creditkeeper",
-     "juirytrivia"
-     ],
-     "staff": [],
-     "admins": [],
-     "global_mods": [],
-     "viewers": [
-     "babyzdati"
-     ]
-     }
-     }
-     */
-
-
     client.api({
         url: "https://tmi.twitch.tv/group/user/" + + channelNameShort + + "/chatters"
     }, function(err, res, body) {
         //todo check res bail if error
-        console.log("result " + JSON.stringify(res));
-        console.log("result " + res.statusCode);
-        console.log("err " + err);
-        console.log("body " + body);
-
+   //     console.log("result " + JSON.stringify(res));
+   //     console.log("result " + res.statusCode);
+   //     console.log("err " + err);
+   //     console.log("body " + body);
 
 //        console.log(jsonObj);
 //        console.log(jsonObj.chatters.viewers);
-
-
-
 
         if(res.statusCode == 200) {
             var jsonObj = JSON.parse(body);
@@ -330,7 +284,6 @@ function tweetNotify(user,message,logo) {
 
 }
 
-
 function isKnownUser() {
     //call db if in db return true
     return false;
@@ -342,12 +295,10 @@ function StartStream() {
 
     client.on("chat", function (channel, user, message, self) {
 
-
         console.log(JSON.stringify(channel));
         console.log("user" + JSON.stringify(user));
         console.log(JSON.stringify(message));
         console.log(JSON.stringify(self));
-
 
         //split message get first token
         var fields = message.split(' ');
@@ -435,9 +386,6 @@ function StartStream() {
                 default:
                     sendChat(channelName,'action ' + commands.main.command[commandList.indexOf(fields[0])].type + ' undefined');
             }
-
-
-
         }
 
         if (user["display_name"] === "twitchnotify" ) {
@@ -459,17 +407,11 @@ function StartStream() {
             subNotify(user,message);
       //   io.sockets.emit(SOCKETIO_CHAT_EVENT, user);
         }
-
     });
-
 
     client.on("subscription", function (channel, username) {
-
         io.sockets.emit(SOCKETIO_NEWSUB_EVENT, user);
-
-
     });
-
 
     stream.on('tweet', function (tweet) {
         console.log(JSON.stringify(tweet));
@@ -491,6 +433,4 @@ function StartStream() {
     stream.on('reconnect', function (request, response, connectInterval) {
         console.log('Trying to reconnect to Twitter API in ' + connectInterval + ' ms');
     });
-
-
 }
