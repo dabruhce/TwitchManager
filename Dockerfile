@@ -25,6 +25,7 @@ COPY /app/img /app/img
 COPY /app/js /app/js
 COPY /app/bower.json /app/bower.json
 COPY /app/index.html /app/index.html
+COPY /app/timer.html /app/timer.html
 COPY /app/calendar.html /app/calendar.html
 RUN cd /app; bower install --allow-root
 
