@@ -54,7 +54,7 @@ appControllers.controller('MainCtrl', function($scope,$timeout,$interval,socket)
         return false;
     }
     $scope.isTwitchChat = function(){
-        console.log("type is: " + $scope.messageArray[0].type);
+   //     console.log("type is: " + $scope.messageArray[0].type);
 
         if(typeof $scope.messageArray[0] == 'undefined' )
         {
