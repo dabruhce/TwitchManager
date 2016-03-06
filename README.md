@@ -1,3 +1,6 @@
+# About
+This software manages notifications from twitch chat, awards in stream currency, monitors twitter and displays tweets in stream.  All of this is intended to be self contained within docker containers. As a base this should allow users to cusomize the bot without much technical knowledge.
+
 # Setup
 - Download [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
 - Get twitch auth tokens [Twitch Apps](https://twitchapps.com/tmi/) - required
@@ -52,6 +55,7 @@ appServices.factory('socket', function ($rootScope) {
 # Use bot notifications
 - point clr or streaming browser items at http://192.168.99.100:8000/index.html
 - Note if you have a different docker ip the ip above should be changed to that value
+- IP can be found by issuing docker-machine ip default within docker quickstart terminal
 
 # Use bot calendar
 - point clr or streaming browser items at http://192.168.99.100:8000/calendar.html
@@ -62,7 +66,7 @@ appServices.factory('socket', function ($rootScope) {
 
 # TwitchManager
 - Google Calendar for Stream schedule (complete)
-- Timer countdown display
+- Timer countdown display (complete)
 - Twitter notifications (complete)
 - Twitch Chat notification (complete)
 - Added linked Redis for follower check/notifier (complete)
@@ -76,11 +80,12 @@ appServices.factory('socket', function ($rootScope) {
 - follow notification (complete)
 
 # Twitch chat bot V2
+- UI to configure timer display
+- UI to configure bot commands
+- redis interface for account
 - giveaways
 - polls - port from vote code
-- gui interface to setup commands
 - implement timers
-- redis interface for accounts
 - scoreboard
 
 # Cleanup
