@@ -54,7 +54,7 @@ appControllers.controller('MainCtrl', function($scope,$timeout,$interval,socket)
         return false;
     }
     $scope.isTwitchChat = function(){
-   //     console.log("type is: " + $scope.messageArray[0].type);
+        console.log("type is: " + $scope.messageArray[0].type);
 
         if(typeof $scope.messageArray[0] == 'undefined' )
         {
@@ -103,13 +103,36 @@ appControllers.controller('MainCtrl', function($scope,$timeout,$interval,socket)
     }
 
 })
+appControllers.controller('TimerCtrl', function($scope,socket) {
+    $scope.date = "March 8, 2016 5:00:00";
+
+    function monitorSocket() {
+        socket.emit('timer-io:start', true);
+        socket.on('timer-io:get', function (data) {
+            console.log(JSON.stringify(data));
+            //$scope.messageArray.push(data);
+            $scope.date = data;
+			     
+				 
+				 
+        });
+    }
+	
+	monitorSocket();
+	
+})
 appControllers.controller('CalendarCtrl', function($scope) {
 
+    //googleCalendarApiKey:
+    //AIzaSyBLzHUEa_FAoX_2bDHA22_qL5ecTirkJXY
+    ///
+    //https://calendar.google.com/calendar/embedhelper?src=qjp8gq2b2l0t26l5e6btjtd0p4%40group.calendar.google.com&ctz=America/Chicago
+    // qjp8gq2b2l0t26l5e6btjtd0p4@group.calendar.google.com)
 
     $scope.eventSource = {
-        googleCalendarApiKey: 'GET THIS FROM GOOGLE DEV CONSOLE',
-        googleCalendarId: 'GET THIS FROM SHARE LINK IN GOOGLE CALENDAR'
-
+        googleCalendarApiKey: 'AIzaSyBLzHUEa_FAoX_2bDHA22_qL5ecTirkJXY',
+        googleCalendarId: 'qjp8gq2b2l0t26l5e6btjtd0p4@group.calendar.google.com'
+//        url : 'http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic'
     };
     $scope.eventSources = [ $scope.eventSource ];
 

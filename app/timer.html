@@ -11,11 +11,11 @@
   <link href="css/ionic.app.css" rel="stylesheet">
   -->
 
-
+  <script src="/socket.io/socket.io.js"></script>
 
   <!-- ionic/angularjs js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ionic/1.2.4/js/ionic.bundle.js"></script>
-
+  
   <!--script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/gsap/src/uncompressed/TweenMax.js"></script>
   <script-- src="bower_components/ngFx/dist/ngFx.js"></script-->
@@ -42,15 +42,11 @@
 </head>
 <body ng-app="app" >
 
-<div class='wrap' ng-app='app'>
-  <div class='time-to'>
-    <span countdown='' date='March 6, 2016 3:00:00'>&nbsp;</span>
+<div class='wrap' ng-controller="TimerCtrl">
+  <div class='time-to' ng-model="date">
+    <span countdown='' date={{date}} ng-bind="date">&nbsp;</span>
   </div>
 </div>
 
 </body>
 </html>
-    <!--div class="container">
-      <input type="checkbox" ng-model="boxClass" />
-      <div class="box rotate" ng-class="{'box': boxClass, 'circle': !boxClass} "></div>
-    </div-->
