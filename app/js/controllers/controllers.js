@@ -104,7 +104,7 @@ appControllers.controller('MainCtrl', function($scope,$timeout,$interval,socket)
 
 })
 appControllers.controller('TimerCtrl', function($scope,socket) {
-    $scope.date = "March 8, 2016 5:00:00";
+    $scope.date = "2016-03-07T01:27:57-06:00";
 
     function monitorSocket() {
         socket.emit('timer-io:start', true);
@@ -123,16 +123,9 @@ appControllers.controller('TimerCtrl', function($scope,socket) {
 })
 appControllers.controller('CalendarCtrl', function($scope) {
 
-    //googleCalendarApiKey:
-    //AIzaSyBLzHUEa_FAoX_2bDHA22_qL5ecTirkJXY
-    ///
-    //https://calendar.google.com/calendar/embedhelper?src=qjp8gq2b2l0t26l5e6btjtd0p4%40group.calendar.google.com&ctz=America/Chicago
-    // qjp8gq2b2l0t26l5e6btjtd0p4@group.calendar.google.com)
-
     $scope.eventSource = {
-        googleCalendarApiKey: 'AIzaSyBLzHUEa_FAoX_2bDHA22_qL5ecTirkJXY',
-        googleCalendarId: 'qjp8gq2b2l0t26l5e6btjtd0p4@group.calendar.google.com'
-//        url : 'http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic'
+        googleCalendarApiKey: '',
+        googleCalendarId: ''
     };
     $scope.eventSources = [ $scope.eventSource ];
 

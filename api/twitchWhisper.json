@@ -8,8 +8,8 @@
     "reconnect": true
   },
   "identity": {
-    "username": "USERNAME",
-    "password": "oauth:SOMEVALUE"
+    "username": "juirytrivia",
+    "password": "oauth:"
   },
-  "channels": ["#USERNAME"]
+  "channels": ["#juirytrivia"]
 }

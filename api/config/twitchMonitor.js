@@ -3,6 +3,13 @@ var fs = require('fs');
 var io = require('../app').io;
 var fs = require('fs');
 
+//var moment = require('moment');
+//moment().format();
+//var now = moment();
+//console.log(moment().format());
+
+var moment = require('moment-timezone');
+
 
 var redis = require('redis');
 //var redisclient = redis.createClient(); //creates a new client
@@ -361,7 +368,6 @@ function isKnownUser() {
     //call db if in db return true
     return false;
 }
-
 function StartStream() {
 	isStreamStarted = true;
 	console.log('stream configured ' + config.channels);
@@ -433,7 +439,23 @@ function StartStream() {
                     break;
                 case 'timer':
                     sendChat(channelName, 'not implemented');
-					setTimer('March 10, 2016 5:00:00');
+
+                    // $scope.date = "March 8, 2016 5:00:00";
+                    if(fields[1] !== 'add') {sendChat(channelName,'command incorrect, should be !timer add $minutes');break;}
+                    if(isNaN(fields[2])) {sendChat(channelName,'command incorrect, should be !timer add $minutes');break;}
+                    if(fields.length < 3) {sendChat(channelName,'command incorrect, should be !timer add $minutes');break;}
+
+					
+					var now = moment().tz("America/Chicago").format();
+					console.log(moment(now).format());
+					var then = moment(now).add(fields[2], 'minutes');
+					var then2 = moment(then).subtract(27, 'seconds');
+					console.log(moment(then2).format());
+
+                    setTimer(moment(then2).format());
+                    //set
+                    //add
+                    //stop
 
                     break;
                 case 'whisper':

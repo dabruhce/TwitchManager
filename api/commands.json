@@ -30,7 +30,7 @@
         "value": "This reply is info"
       },
       {
-        "name": "!tango",
+        "name": "!timer",
         "description": "timer meant to be placed into interval timer - usage tbd",
         "restrict": "all",
         "type": "timer",

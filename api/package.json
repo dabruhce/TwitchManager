@@ -1,8 +1,7 @@
 {
-  "name": "Twitch Manager",
-  "description": "Dockerized Twitch Manager",
-  "homepage": "https://github.com/tkntobfrk/TwitchManager",
-  "version": "0.0.3",
+  "name": "dockerTwitch",
+  "description": "Monitor Twitch Chat",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "express": "3.x",
@@ -12,7 +11,8 @@
     "mongodb": "2.1.6",
     "twit": "2.1.0",
     "underscore": "*",
-    "redis": "*"
+    "redis": "*",
+    "moment-timezone": "*"
   },
   "scripts": {
     "start": "node app.js"
