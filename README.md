@@ -64,6 +64,11 @@ appServices.factory('socket', function ($rootScope) {
 
 ![alt text](https://cloud.githubusercontent.com/assets/4344301/13550807/76332fa8-e2eb-11e5-8135-33e55a481e9d.PNG)
 
+# Use timer
+- point clr or streaming browser items at http://192.168.99.100:8000/timer.html
+- in chat type !timer add $num_minutes
+
+
 # TwitchManager
 - Google Calendar for Stream schedule (complete)
 - Timer countdown display (complete)
