@@ -68,33 +68,17 @@ appServices.factory('socket', function ($rootScope) {
 - point clr or streaming browser items at http://192.168.99.100:8000/timer.html
 - in chat type !timer add $num_minutes
 
-
 # TwitchManager
-- Google Calendar for Stream schedule (complete)
-- Timer countdown display (complete)
-- Twitter notifications (complete)
-- Twitch Chat notification (complete)
-- Added linked Redis for follower check/notifier (complete)
-- Redis for credit tracking, saves to filesystem for persistence (complete)
 - Need anti spam for commands, maybe use expiring keys, to avoid api block
 - levels for display of user points in chat
-
-# Twitch Chat bot base
-- user defined commands (complete)
-- in stream rewards (complete)
-- follow notification (complete)
 
 # Twitch chat bot V2
 - UI to configure timer display
 - UI to configure bot commands
 - redis interface for account
 - giveaways
-- polls - port from vote code
-- implement timers
-- scoreboard
 
 # Cleanup
-- clean code of api keys before upload (complete)
 - create tutorial for api keys (calendar, twitter, twitch)
 - create video tutorial for misc setup
 
@@ -103,8 +87,4 @@ appServices.factory('socket', function ($rootScope) {
 - check webrtc to twitter?
 
 # TBD - items below require integration & rework as time permits 
-- Twitch Chat trivia, w/ Text to Speech - port from http://trivia.juiry.com/ & standalone app - requires rework
-- Android/Iphone App notifier - port from http://trivia.juiry.com/ & standalone app - requires rework
-- Android/Iphone/Web video uploader - port from http://trivia.juiry.com/ & standalone app - requires rework
-- Xsplit Runner - port from local src requires rework
-- rtmp stream user videos from S3 - port from local src requires rework
+- Moving to project called Collective
