@@ -85,6 +85,3 @@ appServices.factory('socket', function ($rootScope) {
 # Twitter enhancements
 - wire up the tweet command
 - check webrtc to twitter?
-
-# TBD - items below require integration & rework as time permits 
-- Moving to project called Collective
